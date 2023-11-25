@@ -10,7 +10,7 @@ def SaekjaOrdabokLysingu(ordid):
   req1 = requests.get("https://islenskordabok.arnastofnun.is/django/api/es/flettur/?fletta={a}*&simple=true".format(a = ordid))
   y = json.loads(req1.text)
 
-  #Reyndi að herma eftir eftirfarandi og nennti aldrei að laga það: https://github.com/mideind/Greynir/blob/4e4398a6067fbbf6c9dd0786b0c1224663e1841d/queries/dictionary.py
+  #Reyndi að herma eftir þessu og nennti aldrei að laga það: https://github.com/mideind/Greynir/blob/4e4398a6067fbbf6c9dd0786b0c1224663e1841d/queries/dictionary.py
 
   for i in range(len(y["results"])):
     if y["results"][i]["fletta"] == ordid: #.title()
